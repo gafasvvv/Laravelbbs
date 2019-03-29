@@ -16,7 +16,7 @@ class CreateBbsTable extends Migration
         Schema::create('bbs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('title');
-            $table->text('context');
+            $table->text('body');
             $table->timestamps();
         });
     }

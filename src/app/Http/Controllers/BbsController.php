@@ -3,16 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Bbs;
 
 class BbsController extends Controller
 {
+     //コントローラーでバリデーションチェックする
+
     /**
      * 投稿の一覧を表示する
      * @return View
      */
     public function index()
     {
-        return view('top');
+        $bbs = new Bbs;
+        $posts = $bbs->getAllPost();
+        
+        return view('top', ['posts' => $posts]);
     }
 
     /**

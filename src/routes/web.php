@@ -11,4 +11,14 @@
 |
 */
 
+//一覧表示
 Route::get('/', 'BbsController@index');
+
+//新規作成
+Route::get('/bbs/create', 'BbsController@create');
+
+//編集
+Route::post('/bbs/update/{$id}', 'BbsController@update');
+
+//削除
+Route::delete('/bbs/delete/{$id}', 'BbsController@delete');

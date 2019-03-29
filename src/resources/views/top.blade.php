@@ -1,29 +1,29 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+{{-- layoutの継承 --}}
+@extends('layout')
 
-        <title>@yield('title')</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    </head>
-    <body>
-        <h1>掲示板</h1>
-        <form action="">
+@section('content')
+    <h1>掲示板</h1>
+        {!! Form::open() !!}
             <div>
-                <h2>タイトル</h2>
-                <input type="text">
+                {!! Form::label('title', 'タイトル') !!}
+                {!! Form::text('title', null) !!}
             </div>
             <div>
-                <h2>本文</h2>
-                <textarea type="text"></textarea>
+                {!! Form::label('body', '本文') !!}
+                {!! Form::text('body', null) !!}
             </div>
             <div>
-                <input type="submit">
+                {!! Form::submit('追加') !!}
             </div>
-        </form>
-        <h2>一覧</h2>
-    </body>
-</html>
+        {!! Form::close() !!}
+    <h2>一覧</h2>
+    {{-- $postsが空かどうかを確認 --}}
+    @if(is_array($posts))
+        @foreach($posts as $post)
+            <div>
+                <p>{{ $post->title }}</p>
+                <p>{{ $post->body }}</p>
+            </div>
+        @endforeach
+    @endif
+@endsection
