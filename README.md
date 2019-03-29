@@ -83,3 +83,4 @@ $ sed -i -e 's/SESSION_DRIVER=.*/SESSION_DRIVER=redis/' .env
 $ docker-compose exec redis ash
 $ redis-cli
 ```
+# laravelbbs
