@@ -4,6 +4,7 @@
     <h2>{!! link_to_route('posts.index', '掲示板') !!}</h2> 
         {!! link_to_route('posts.create', '新規作成') !!}
     <h3>投稿一覧</h3>
+    @if(count($posts)>0)
         @foreach($posts as $post)
         <div>
             <h4>{{$post->title}}</h4>
@@ -14,4 +15,5 @@
             {!! Form::close() !!}
         </div>
         @endforeach
+    @endif
 @endsection
