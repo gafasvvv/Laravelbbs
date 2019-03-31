@@ -12,13 +12,19 @@
 */
 
 //一覧表示
-Route::get('/', 'BbsController@index');
+Route::get('/', 'PostsController@index')->name('posts.index');
 
 //新規作成
-Route::get('/bbs/create', 'BbsController@create');
+Route::get('posts/create', 'PostsController@create')->name('posts.create');
+
+//新規保存
+Route::post('posts/', 'PostsController@store')->name('posts.store');
 
 //編集
-Route::post('/bbs/update/{$id}', 'BbsController@update');
+Route::get('posts/{id}/edit', 'PostsController@edit')->name('posts.edit');
+
+//更新
+Route::put('posts/{id}', 'PostsController@update')->name('posts.update');
 
 //削除
-Route::delete('/bbs/delete/{$id}', 'BbsController@delete');
+Route::delete('posts/{id}', 'PostsController@destroy')->name('posts.destroy');

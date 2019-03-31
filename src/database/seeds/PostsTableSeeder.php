@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Bbs;
-
-class BbsTableSeeder extends Seeder
+use App\Post;
+class PostsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,7 +12,7 @@ class BbsTableSeeder extends Seeder
     public function run()
     {
         for($i=1; $i <=10; $i++){
-            $post = new Bbs;
+            $post = new Post;
             $post->title = 'タイトル'.$i;
             $post->body = '本文'.$i;
             $post->save();
