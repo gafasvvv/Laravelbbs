@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('app.layout')
 
 @section('content')
     <h2>{!! link_to_route('posts.index', '掲示板') !!}</h2> 
