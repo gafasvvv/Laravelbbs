@@ -46,8 +46,8 @@ Hi xxx! You've successfully authenticated, but GitHub does not provide shell acc
 ### Git clone
 
 ```
-$ git clone git@github.com:ucan-lab/docker-laravel5.git
-$ cd docker-laravel5
+$ git clone git@github.com:gafasvvv/Laravelbbs.git
+$ cd Laravelbbs
 ```
 
 ### Docker compose build & up
@@ -61,11 +61,13 @@ $ docker-compose up -d
 
 ```
 $ docker-compose exec app ash
-$ composer create-project laravel/laravel --prefer-dist .
+$ composer install
 ```
-http://127.0.0.1:3500
-上記のアドレスにアクセスしてLaravelのウェルカムページが表示されれば、
-マイグレーションを実行し、Laravel環境構築の完成です。
+
+### Copy .env
+```
+$ cp .env.example .env
+```
 
 ### Running Migrations
 
@@ -73,6 +75,9 @@ http://127.0.0.1:3500
 $ docker-compose exec app ash 
 $ php artisan migrate
 ```
+
+http://127.0.0.1:3500
+上記のアドレスにアクセスしてLaravelのウェルカムページが表示されれば、Laravel環境構築の完成です。
 
 ## As necessary
 
